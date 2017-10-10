@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	
+	<!-- 自动扫描 cn.joanna.spring.mvc 下的带有Spring组件注解的类 -->
+	<context:component-scan base-package="cn.joanna.spring.mvc"/>
+
+	<!-- 配置视图解析器：将控制器方法返回值解析为实际物理视图 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+	<!-- prefix表示前缀 -->
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<!-- suffix表示后缀 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>
